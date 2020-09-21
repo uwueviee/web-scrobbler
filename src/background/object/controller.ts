@@ -3,7 +3,11 @@
 import { ApiCallResult } from '@/background/scrobbler/api-call-result';
 import { ConnectorEntry } from '@/common/connector-entry';
 import { ControllerMode } from '@/background/object/controller-mode';
-import { ParsedSongInfo, EditedSongInfo } from '@/background/object/song';
+import {
+	ParsedSongInfo,
+	EditedSongInfo,
+	ParsedSongField,
+} from '@/background/object/song';
 import { Pipeline } from '@/background/pipeline/pipeline';
 import { SavedEdits } from '@/background/storage/saved-edits';
 import { ScrobbleManager } from '@/background/scrobbler/scrobble-manager';
@@ -29,7 +33,12 @@ import {
  * List of song fields used to check if song is changed. If any of
  * these fields are changed, the new song is playing.
  */
-const fieldsToCheckSongChange = ['artist', 'track', 'album', 'uniqueID'];
+const fieldsToCheckSongChange: ParsedSongField[] = [
+	'artist',
+	'track',
+	'album',
+	'uniqueID',
+];
 
 export enum ControllerEvent {
 	Reset,

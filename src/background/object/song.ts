@@ -97,6 +97,8 @@ export type EditedSongInfo = BaseSongInfo;
 
 export type BaseSongField = keyof BaseSongInfo;
 
+export type ParsedSongField = keyof ParsedSongInfo;
+
 export enum LoveStatus {
 	Unknown,
 	Loved,
