@@ -120,9 +120,12 @@ Connector.isScrobblingAllowed = () => {
 	return allowedCategories.includes(videoCategory);
 };
 
-Connector.applyFilter(MetadataFilter.getYoutubeFilter().append({
-	artist: removeLtrRtlChars, track: removeLtrRtlChars,
-}));
+Connector.applyFilter(
+	MetadataFilter.getYoutubeFilter().append({
+		artist: removeLtrRtlChars,
+		track: removeLtrRtlChars,
+	})
+);
 
 function setupEventListener() {
 	// TODO Add MutationObserver
